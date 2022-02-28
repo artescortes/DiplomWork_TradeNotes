@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tradenotediplomwork.SignUpController">
+   <children>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="95.0" prefWidth="600.0" style="-fx-background-color: #2f3448;">
+         <children>
+            <Label layoutX="191.0" layoutY="16.0" text="Trade Note" textFill="WHITE">
+               <font>
+                  <Font size="44.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutY="95.0" prefHeight="307.0" prefWidth="600.0" style="-fx-background-color: fafafa;">
+         <children>
+            <TextField layoutX="50.0" layoutY="42.0" prefHeight="38.0" prefWidth="501.0" promptText="Введите имя" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="42.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="50.0" layoutY="90.0" promptText="Введите фамилию" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="90.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="50.0" layoutY="135.0" promptText="Номер телефона" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="135.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="50.0" layoutY="182.0" promptText="E-mail адрес" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="182.0">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </TextField>
+            <Button layoutX="426.0" layoutY="254.0" mnemonicParsing="false" onAction="#switchToPassCreate" prefHeight="25.0" prefWidth="124.0" text="Создать аккаунт" />
+            <Label layoutX="210.0" layoutY="8.0" prefHeight="27.0" prefWidth="180.0" text="Зарегистрироваться">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button layoutX="50.0" layoutY="254.0" mnemonicParsing="false" onAction="#switchToLogIn" text="Назад" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
