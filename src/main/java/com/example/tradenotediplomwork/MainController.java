@@ -46,6 +46,9 @@ public class MainController {
     private TextArea mainTextArea;
 
     @FXML
+    private Button needHelp;
+
+    @FXML
     private TextField textfield1, textfield2, textfield3,
             textfield4, textfield5;
 
@@ -77,5 +80,25 @@ public class MainController {
                 "Студент 4 курса, Факультета прикладной математики, физики и информационных технологий \n" +
                 "Козловский Артём Сергеевич";
         mainTextArea.setText(aboutCompany);
+    }
+
+    @FXML
+    void needHelp(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Main.class.getResource("registrationandsign/chatbot.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+    }
+
+    @FXML
+    void toMainFromChat(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Main.class.getResource("registrationandsign/mainwin.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
 }

@@ -28,6 +28,9 @@ public class SignUpController {
     @FXML
     public Button switchToPassCreate;
 
+//    @FXML
+//    public Button needHelp;
+
 
 
     @FXML

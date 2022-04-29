@@ -59,6 +59,11 @@
                         <Font size="19.0" />
                      </font>
                   </MenuButton>
+                  <Button fx:id="needHelp" mnemonicParsing="false" onAction="#needHelp" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #FFC373;" text="Нужна помощь" textFill="#61d7a4">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
                </children>
             </VBox>
          </left>
