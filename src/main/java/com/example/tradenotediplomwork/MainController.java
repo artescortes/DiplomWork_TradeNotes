@@ -5,6 +5,7 @@ import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,6 +14,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Callback;
@@ -54,12 +56,16 @@ public class MainController {
     @FXML
     private Button addToken;
 
-    @FXML
-    private TextField textfield1, textfield2, textfield3,
-            textfield4, textfield5;
+    static int tableId;
+    static int tableIdKurs;
+
+//    @FXML
+//    private TextField textfield1, textfield2, textfield3,
+//            textfield4, textfield5;
 
 
-    TableView tableView;
+    static TableView tableViewCrypto;
+    static TableView tableViewKurs;
     private static String id;
     Connection conn = null;
     ResultSet rs = null;
@@ -111,5 +117,23 @@ public class MainController {
     @FXML
     void menuItemTransactions(ActionEvent event) {
         mainTextArea.setText("Hi");
+    }
+
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        tableViewKurs.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                tableId = tableViewKurs.getSelectionModel().getSelectedIndex();
+            }
+        });
+
+        tableViewCrypto.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                tableId = tableViewCrypto.getSelectionModel().getSelectedIndex();
+            }
+        });
+
     }
 }

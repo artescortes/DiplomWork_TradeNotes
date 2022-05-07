@@ -71,8 +71,9 @@
             <TextArea fx:id="mainTextArea" prefHeight="112.0" prefWidth="900.0" style="-fx-background-color: #ffff;" text="&#10;" BorderPane.alignment="CENTER" />
          </bottom>
          <center>
-            <TableView prefHeight="428.0" prefWidth="584.0" style="-fx-background-color: #ffff;" BorderPane.alignment="CENTER">
+            <TableView fx:id="tableViewCrypto" prefHeight="428.0" prefWidth="430.0" style="-fx-background-color: #ffff;" BorderPane.alignment="CENTER">
               <columns>
+                  <TableColumn prefWidth="75.0" text="id" />
                 <TableColumn prefWidth="75.0" text="Название " />
                 <TableColumn prefWidth="75.0" text="Количество" />
                   <TableColumn prefWidth="109.0" text="Сумма покупки" />
@@ -81,10 +82,11 @@
             </TableView>
          </center>
          <right>
-            <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <TableView fx:id="tableViewKurs" prefHeight="428.0" prefWidth="261.0" BorderPane.alignment="CENTER">
               <columns>
-                <TableColumn prefWidth="111.0" text="Нынешняя цена" />
-                <TableColumn prefWidth="88.0" text="Курс за 1" />
+                  <TableColumn prefWidth="38.0" text="id" />
+                <TableColumn prefWidth="113.0" text="Нынешняя сумма" />
+                <TableColumn prefWidth="109.0" text="Курс за единицу" />
               </columns>
             </TableView>
          </right>
