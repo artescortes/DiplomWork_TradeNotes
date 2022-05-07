@@ -13,7 +13,20 @@ public class ChatBot extends MainController{
     private Button registrationBtn;
 
     @FXML
+    private Button contactChatBtn;
+
+    @FXML
     void RegistrationHelp(ActionEvent event) {
-        chatTextArea.setText("В России хотят запретить криптовалюту");
+        chatTextArea.setText("Здесь нужная при регистрации информация");
     }
+
+    @FXML
+    void ShowContacts(ActionEvent event) {
+        String contact = new String();
+        contact = "Контакты компании: "  + "\n" +
+                "Номер телефона: +79874563652 " + "\n" +
+                "E-mail - artem.fomichev.2000@mail.ru";
+        chatTextArea.setText(contact);
+    }
+
 }

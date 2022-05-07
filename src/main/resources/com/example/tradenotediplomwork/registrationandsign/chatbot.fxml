@@ -22,6 +22,11 @@
                   <Font size="19.0" />
                </font>
             </Button>
+            <Button fx:id="contactChatBtn" mnemonicParsing="false" onAction="#ShowContacts" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #FFC373;" text="Контакты" textFill="#61d7a4">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Button>
          </children>
       </VBox>
       <HBox layoutX="199.0" layoutY="350.0" prefHeight="72.0" prefWidth="402.0" />

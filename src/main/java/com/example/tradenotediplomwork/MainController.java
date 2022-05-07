@@ -49,6 +49,12 @@ public class MainController {
     private Button needHelp;
 
     @FXML
+    private Button mainNewsBtn;
+
+    @FXML
+    private Button addToken;
+
+    @FXML
     private TextField textfield1, textfield2, textfield3,
             textfield4, textfield5;
 
@@ -100,5 +106,10 @@ public class MainController {
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
+    }
+
+    @FXML
+    void menuItemTransactions(ActionEvent event) {
+        mainTextArea.setText("Hi");
     }
 }

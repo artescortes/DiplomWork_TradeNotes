@@ -13,12 +13,17 @@
          <top>
             <HBox prefHeight="55.0" prefWidth="900.0" style="-fx-background-color: #FFC373;">
                <children>
-                  <Button mnemonicParsing="false" onAction="#ShowNews" prefHeight="56.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-color: #FFC373; -fx-border-width: 3;" text="Новости" textFill="#61d7a4">
+                  <MenuButton alignment="CENTER" mnemonicParsing="false" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #FFC373;" text="Кошелек" textFill="#61d7a4">
+                     <items>
+                        <MenuItem mnemonicParsing="false" text="Кошелек" />
+                        <MenuItem mnemonicParsing="false" text="Акции" />
+                        <MenuItem mnemonicParsing="false" text="История Покупок" />
+                     </items>
                      <font>
-                        <Font size="25.0" />
+                        <Font size="19.0" />
                      </font>
-                  </Button>
-                  <Button fx:id="mainContact" mnemonicParsing="false" onAction="#ShowContacts" prefHeight="60.0" prefWidth="196.0" style="-fx-background-color: #ffffff; -fx-border-color: #FFC373; -fx-border-width: 3;" text="Контакты" textFill="#61d7a4">
+                  </MenuButton>
+                  <Button fx:id="mainNewsBtn" mnemonicParsing="false" onAction="#ShowNews" prefHeight="60.0" prefWidth="196.0" style="-fx-background-color: #ffffff; -fx-border-color: #FFC373; -fx-border-width: 3;" text="Новости" textFill="#61d7a4">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -49,17 +54,12 @@
          <left>
             <VBox prefHeight="513.0" prefWidth="198.0" style="-fx-background-color: #ffff;" BorderPane.alignment="CENTER">
                <children>
-                  <MenuButton alignment="CENTER" mnemonicParsing="false" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #FFC373;" text="Кошелек" textFill="#61d7a4">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Кошелек" />
-                        <MenuItem mnemonicParsing="false" text="Активы" />
-                        <MenuItem mnemonicParsing="false" text="Транзакции" />
-                     </items>
+                  <Button fx:id="addToken" mnemonicParsing="false" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #FFC373;" text="Добавить токен" textFill="#61d7a4">
                      <font>
                         <Font size="19.0" />
                      </font>
-                  </MenuButton>
-                  <Button fx:id="needHelp" mnemonicParsing="false" onAction="#needHelp" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #FFC373;" text="Нужна помощь" textFill="#61d7a4">
+                  </Button>
+                  <Button fx:id="needHelp" mnemonicParsing="false" onAction="#needHelp" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #FFC373;" text="Нужна помощь" textFill="#61d7a4" translateY="284.0" VBox.vgrow="ALWAYS">
                      <font>
                         <Font size="19.0" />
                      </font>
@@ -68,16 +68,26 @@
             </VBox>
          </left>
          <bottom>
-            <TextArea fx:id="mainTextArea" prefHeight="66.0" prefWidth="900.0" style="-fx-background-color: #ffff;" text="&#10;" BorderPane.alignment="CENTER" />
+            <TextArea fx:id="mainTextArea" prefHeight="112.0" prefWidth="900.0" style="-fx-background-color: #ffff;" text="&#10;" BorderPane.alignment="CENTER" />
          </bottom>
          <center>
-            <TableView prefHeight="450.0" prefWidth="702.0" style="-fx-background-color: #ffff;" BorderPane.alignment="CENTER">
+            <TableView prefHeight="428.0" prefWidth="584.0" style="-fx-background-color: #ffff;" BorderPane.alignment="CENTER">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn prefWidth="75.0" text="Название " />
+                <TableColumn prefWidth="75.0" text="Количество" />
+                  <TableColumn prefWidth="109.0" text="Сумма покупки" />
+                  <TableColumn prefWidth="106.0" text="Желаемая цена" />
               </columns>
             </TableView>
          </center>
+         <right>
+            <TableView prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+              <columns>
+                <TableColumn prefWidth="111.0" text="Нынешняя цена" />
+                <TableColumn prefWidth="88.0" text="Курс за 1" />
+              </columns>
+            </TableView>
+         </right>
       </BorderPane>
    </children>
 </AnchorPane>
