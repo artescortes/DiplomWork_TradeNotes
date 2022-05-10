@@ -36,6 +36,7 @@ import java.util.jar.Attributes;
 
 import static com.example.tradenotediplomwork.ConnToBD.connection;
 import static com.example.tradenotediplomwork.ConnToBD.statmt;
+import static javafx.application.Application.setUserAgentStylesheet;
 
 public class MainController {
     @FXML
@@ -107,6 +108,16 @@ public class MainController {
     @FXML
     void toMainFromChat(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource("registrationandsign/mainwin.fxml"));
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+    }
+
+    @FXML
+    void toInsertTokenWin(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(Main.class.getResource("registrationandsign/inserttotablewin.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         Scene scene = new Scene(root);
         stage.setScene(scene);

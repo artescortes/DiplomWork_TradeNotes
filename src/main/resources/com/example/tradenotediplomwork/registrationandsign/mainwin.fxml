@@ -54,7 +54,7 @@
          <left>
             <VBox prefHeight="513.0" prefWidth="198.0" style="-fx-background-color: #ffff;" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="addToken" mnemonicParsing="false" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #FFC373;" text="Добавить токен" textFill="#61d7a4">
+                  <Button fx:id="addToken" mnemonicParsing="false" onAction="#toInsertTokenWin" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #FFC373;" text="Добавить токен" textFill="#61d7a4">
                      <font>
                         <Font size="19.0" />
                      </font>

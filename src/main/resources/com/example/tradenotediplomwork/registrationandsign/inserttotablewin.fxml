@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tradenotediplomwork.InsertTokenController">
+   <children>
+      <Label layoutX="30.0" layoutY="14.0" prefHeight="17.0" prefWidth="161.0" text="Добавьте валюту" textFill="#61d7a4">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <TextField fx:id="textField1" layoutX="294.0" layoutY="58.0" />
+      <TextField fx:id="textField2" layoutX="294.0" layoutY="118.0" />
+      <TextField fx:id="textField3" layoutX="294.0" layoutY="188.0" />
+      <TextField fx:id="textField4" layoutX="294.0" layoutY="250.0" />
+      <Label layoutX="97.0" layoutY="62.0" text="Название" textFill="#61d7a4">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="97.0" layoutY="117.0" text="Количество" textFill="#61d7a4">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="97.0" layoutY="186.0" text="Сумма покупки" textFill="#61d7a4">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label layoutX="97.0" layoutY="249.0" text="Желаемая цена" textFill="#61d7a4">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Button fx:id="insertTokenBtn" layoutX="344.0" layoutY="297.0" mnemonicParsing="false" onAction="#insertTokenToTable" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #FFC373;" text="Добавить токен" textFill="#61d7a4">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+      <Button layoutX="66.0" layoutY="297.0" mnemonicParsing="false" onAction="#toMainFromInsert" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #FFC373;" text="На главную" textFill="#61d7a4">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

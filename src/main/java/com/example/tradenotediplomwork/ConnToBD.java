@@ -18,20 +18,18 @@ public class ConnToBD extends Main {
 
         String sql1;
         sql1 =  "CREATE TABLE IF NOT EXISTS  users " +
-                "(id INTEGER NOT NULL," +
+                "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "name TEXT  NOT NULL," +
                 "surname TEXT NOT NULL," +
                 "phone_number INTEGER NOT NULL," +
-                "e_mail NVARCHAR NOT NULL," +
-                "PRIMARY KEY(id))";
+                "e_mail NVARCHAR(100) NOT NULL)";
         statmt.executeUpdate(sql1);
         sql1 =  "CREATE TABLE IF NOT EXISTS  crypto " +
-                "(id INTEGER NOT NULL," +
+                "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "name TEXT  NOT NULL," +
                 "quantity DOUBLE NOT NULL," +
                 "sum_of_buy DOUBLE NOT NULL," +
-                "desired_price DOUBLE NOT NULL," +
-                "PRIMARY KEY(id))";
+                "desired_price DOUBLE NOT NULL)";
         statmt.executeUpdate(sql1);
         System.out.println("tables create!");
         return connection;
