@@ -14,10 +14,12 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.util.Optional;
 import java.util.ResourceBundle;
 
 import static com.example.tradenotediplomwork.ConnToBD.connection;
@@ -65,7 +67,7 @@ public class MainController {
     public TableView<CryptoTable> tableViewCrypto;
 
     @FXML
-    public TableView tableViewKurs;
+    public TableView<CryptoTable> tableViewKurs;
 
 
     private static String id;
@@ -79,16 +81,7 @@ public class MainController {
     }
 
     @FXML
-    void ShowContacts(ActionEvent event) {
-        String contact = new String();
-        contact = "Контакты компании: " +
-                "Номер телефона: +79874563652 " +
-                "E-mail - artem.fomichev.2000@mail.ru";
-        mainTextArea.setText(contact);
-    }
-
-    @FXML
-    void AboutProgram(ActionEvent event) {
+    void AboutProgram(ActionEvent event) throws IOException {
         String aboutCompany = new String();
         aboutCompany = "ЧГУ им. И.Н. Ульянова.\n" +
                 "Студент 4 курса, Факультета прикладной математики, физики и информационных технологий \n" +
@@ -107,16 +100,6 @@ public class MainController {
     }
 
     @FXML
-    void toMainFromChat(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("registrationandsign/mainwin.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.centerOnScreen();
-        stage.show();
-    }
-
-    @FXML
     void toInsertTokenWin(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource("registrationandsign/inserttotablewin.fxml"));
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -124,15 +107,6 @@ public class MainController {
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
-    }
-
-    @FXML
-    void menuItemTransactions(ActionEvent event) {
-        mainTextArea.setText("Hi");
-    }
-
-
-    private void DatabaseInfo() throws SQLException, ClassNotFoundException {
     }
 
     public void initialize() throws SQLException, ClassNotFoundException {
@@ -164,4 +138,5 @@ public class MainController {
             e.printStackTrace();
         }
     }
+
 }

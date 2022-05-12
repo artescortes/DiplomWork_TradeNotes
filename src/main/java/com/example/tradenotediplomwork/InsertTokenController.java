@@ -1,6 +1,8 @@
 package com.example.tradenotediplomwork;
 
+import com.example.tradenotediplomwork.modalWin.ModalWindow;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -8,6 +10,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -61,9 +67,16 @@ public class InsertTokenController {
             journal.setString(4, textField4.getText());
             journal.executeUpdate();
             System.out.println("Entry Saved!");
+            textField1.setText("");
+            textField2.setText("");
+            textField3.setText("");
+            textField4.setText("");
+            Button btn = new Button("new window");
+            btn.setOnAction(ModalWindow.modalWindowInsertToken(""));
         } catch (Exception e3) {
             System.out.println("Error!");
         }
 
     }
+
 }

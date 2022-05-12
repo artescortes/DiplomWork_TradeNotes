@@ -1,5 +1,7 @@
 package com.example.tradenotediplomwork;
 
+import javafx.scene.control.TableView;
+
 public class CryptoTable {
 
     private int id;
@@ -7,6 +9,7 @@ public class CryptoTable {
     private Double quantity;
     private Double sum_of_buy;
     private Double desired_price;
+    public TableView<CryptoTable> tableViewCrypto;
 
     public CryptoTable(int id, String name, Double quantity, Double sum_of_buy, Double desired_price) {
         this.id = id;
@@ -14,6 +17,7 @@ public class CryptoTable {
         this.quantity = quantity;
         this.sum_of_buy = sum_of_buy;
         this.desired_price = desired_price;
+        //this.tableViewCrypto = tableViewCrypto;
     }
 
 

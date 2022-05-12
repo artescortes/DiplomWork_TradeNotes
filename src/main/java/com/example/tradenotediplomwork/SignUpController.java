@@ -36,6 +36,7 @@ public class SignUpController {
     @FXML
     void initialize() {
 
+
     }
 
     private Stage stage;
