@@ -1,11 +1,13 @@
 package com.example.tradenotediplomwork;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import java.sql.*;
 
 public class ConnToBD extends Main {
     public static Connection connection;
     public static Statement statmt;
-    public static ResultSet resultSet;
 
     public static Connection conn() throws SQLException, ClassNotFoundException {
         // --------ПОДКЛЮЧЕНИЕ К БАЗЕ ДАННЫХ--------
@@ -15,6 +17,8 @@ public class ConnToBD extends Main {
             System.out.println("Connect to SQLite...");
         }
         statmt = connection.createStatement();
+
+
 
         String sql1;
         sql1 =  "CREATE TABLE IF NOT EXISTS  users " +
@@ -33,6 +37,28 @@ public class ConnToBD extends Main {
         statmt.executeUpdate(sql1);
         System.out.println("tables create!");
         return connection;
+    }
+
+    public ObservableList<CryptoTable> getCryptoTable(String selectRequest) throws SQLException {
+        ObservableList<CryptoTable> res = FXCollections.observableArrayList();
+        ResultSet set = statmt.executeQuery(selectRequest);
+        String name;
+        Double quantity, sum_of_buy, desired_price;
+        int id;
+        while (set.next()) {
+            id = set.getInt("id");
+            name = set.getString("name");
+            quantity = set.getDouble("quantity");
+            sum_of_buy = set.getDouble("sum_of_buy");
+            desired_price = set.getDouble("desired_price");
+            res.add(new CryptoTable(id, name, quantity, sum_of_buy, desired_price));
+        }
+        return res;
+    }
+    public Connection getConnection() {
+        return connection;
+    }
+}
 
         //запрос создания таблицы пользователей
 //        CREATE TABLE IF NOT EXISTS  users (
@@ -52,5 +78,3 @@ public class ConnToBD extends Main {
 //                desired_price DOUBLE NOT NULL,
 //                PRIMARY KEY(id)
 //);
-    }
-}

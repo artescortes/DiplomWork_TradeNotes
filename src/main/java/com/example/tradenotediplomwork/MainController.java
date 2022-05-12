@@ -1,42 +1,26 @@
 package com.example.tradenotediplomwork;
 
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.URL;
-import java.nio.file.attribute.UserDefinedFileAttributeView;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.util.List;
-import java.util.Properties;
+import java.sql.*;
 import java.util.ResourceBundle;
-import java.util.jar.Attributes;
 
 import static com.example.tradenotediplomwork.ConnToBD.connection;
-import static com.example.tradenotediplomwork.ConnToBD.statmt;
-import static javafx.application.Application.setUserAgentStylesheet;
 
 public class MainController {
     @FXML
@@ -57,16 +41,33 @@ public class MainController {
     @FXML
     private Button addToken;
 
+    @FXML
+    private TableColumn<CryptoTable, Double> columnDesiredPrice;
+
+    @FXML
+    private TableColumn<com.example.tradenotediplomwork.CryptoTable, Integer> columnId;
+
+    @FXML
+    private TableColumn<CryptoTable, Double> columnSumOfBuy;
+
+    @FXML
+    private TableColumn<CryptoTable, Double> columnQuantity;
+
+    @FXML
+    private TableColumn<CryptoTable, Text> columnName;
+
     static int tableId;
     static int tableIdKurs;
 
-//    @FXML
-//    private TextField textfield1, textfield2, textfield3,
-//            textfield4, textfield5;
+    private static ObservableList<CryptoTable> CryptoTable = FXCollections.observableArrayList();
+
+    @FXML
+    public TableView<CryptoTable> tableViewCrypto;
+
+    @FXML
+    public TableView tableViewKurs;
 
 
-    static TableView tableViewCrypto;
-    static TableView tableViewKurs;
     private static String id;
     Connection conn = null;
     ResultSet rs = null;
@@ -130,8 +131,11 @@ public class MainController {
         mainTextArea.setText("Hi");
     }
 
-    public void initialize(URL url, ResourceBundle resourceBundle) {
 
+    private void DatabaseInfo() throws SQLException, ClassNotFoundException {
+    }
+
+    public void initialize() throws SQLException, ClassNotFoundException {
         tableViewKurs.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -145,6 +149,19 @@ public class MainController {
                 tableId = tableViewCrypto.getSelectionModel().getSelectedIndex();
             }
         });
-
+        try {
+            if (connection == null) return;
+            ConnToBD connector = new ConnToBD();
+            connection = connector.getConnection();
+            tableViewCrypto.setItems(connector.getCryptoTable("SELECT * FROM crypto"));
+            columnId.setCellValueFactory(new PropertyValueFactory<CryptoTable, Integer>("id"));
+            columnName.setCellValueFactory(new PropertyValueFactory<CryptoTable, Text>("name"));
+            columnQuantity.setCellValueFactory(new PropertyValueFactory<CryptoTable, Double>("quantity"));
+            columnSumOfBuy.setCellValueFactory(new PropertyValueFactory<CryptoTable, Double>("sum_of_buy"));
+            columnDesiredPrice.setCellValueFactory(new PropertyValueFactory<CryptoTable, Double>("desired_price"));
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

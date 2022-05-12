@@ -73,11 +73,11 @@
          <center>
             <TableView fx:id="tableViewCrypto" prefHeight="428.0" prefWidth="430.0" style="-fx-background-color: #ffff;" BorderPane.alignment="CENTER">
               <columns>
-                  <TableColumn prefWidth="75.0" text="id" />
-                <TableColumn prefWidth="75.0" text="Название " />
-                <TableColumn prefWidth="75.0" text="Количество" />
-                  <TableColumn prefWidth="109.0" text="Сумма покупки" />
-                  <TableColumn prefWidth="106.0" text="Желаемая цена" />
+                  <TableColumn fx:id="columnId" prefWidth="75.0" text="id" />
+                <TableColumn fx:id="columnName" prefWidth="75.0" text="Название " />
+                <TableColumn fx:id="columnQuantity" prefWidth="75.0" text="Количество" />
+                  <TableColumn fx:id="columnSumOfBuy" prefWidth="109.0" text="Сумма покупки" />
+                  <TableColumn fx:id="columnDesiredPrice" prefWidth="106.0" text="Желаемая цена" />
               </columns>
             </TableView>
          </center>
