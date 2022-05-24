@@ -2,7 +2,6 @@ package com.example.tradenotediplomwork;
 
 import com.example.tradenotediplomwork.modalWin.ModalWindow;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -10,10 +9,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -22,9 +17,6 @@ import java.sql.PreparedStatement;
 import static com.example.tradenotediplomwork.ConnToBD.connection;
 
 public class InsertTokenController {
-
-    String sql;
-
     @FXML
     private TextField textField2;
 
@@ -36,9 +28,6 @@ public class InsertTokenController {
 
     @FXML
     private TextField textField3;
-
-    @FXML
-    private Button insertTokenBtn;
 
     @FXML
     void initialize() {

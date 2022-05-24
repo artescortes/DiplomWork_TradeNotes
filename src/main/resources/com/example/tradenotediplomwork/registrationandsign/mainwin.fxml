@@ -71,7 +71,7 @@
             <TextArea fx:id="mainTextArea" prefHeight="112.0" prefWidth="900.0" style="-fx-background-color: #ffff;" text="&#10;" BorderPane.alignment="CENTER" />
          </bottom>
          <center>
-            <TableView fx:id="tableViewCrypto" prefHeight="428.0" prefWidth="430.0" style="-fx-background-color: #ffff;" BorderPane.alignment="CENTER">
+            <TableView fx:id="tableViewCrypto" prefHeight="395.0" prefWidth="441.0" style="-fx-background-color: #ffff;" BorderPane.alignment="CENTER">
               <columns>
                   <TableColumn fx:id="columnId" prefWidth="75.0" text="id" />
                 <TableColumn fx:id="columnName" prefWidth="75.0" text="Название " />
@@ -82,7 +82,7 @@
             </TableView>
          </center>
          <right>
-            <TableView fx:id="tableViewKurs" prefHeight="428.0" prefWidth="261.0" BorderPane.alignment="CENTER">
+            <TableView fx:id="tableViewKurs" prefHeight="514.0" prefWidth="261.0" BorderPane.alignment="CENTER">
               <columns>
                   <TableColumn prefWidth="38.0" text="id" />
                 <TableColumn prefWidth="113.0" text="Нынешняя сумма" />

@@ -35,6 +35,11 @@ public class ConnToBD extends Main {
                 "sum_of_buy DOUBLE NOT NULL," +
                 "desired_price DOUBLE NOT NULL)";
         statmt.executeUpdate(sql1);
+        sql1 =  "CREATE TABLE IF NOT EXISTS  course " +
+                "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "current_price DOUBLE NOT NULL," +
+                "current_course DOUBLE NOT NULL)";
+        statmt.executeUpdate(sql1);
         System.out.println("tables create!");
         return connection;
     }

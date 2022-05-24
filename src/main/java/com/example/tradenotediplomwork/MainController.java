@@ -14,34 +14,14 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import javafx.stage.WindowEvent;
-
 import java.io.IOException;
-import java.net.URL;
 import java.sql.*;
-import java.util.Optional;
-import java.util.ResourceBundle;
 
 import static com.example.tradenotediplomwork.ConnToBD.connection;
 
 public class MainController {
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
     private TextArea mainTextArea;
-
-    @FXML
-    private Button needHelp;
-
-    @FXML
-    private Button mainNewsBtn;
-
-    @FXML
-    private Button addToken;
 
     @FXML
     private TableColumn<CryptoTable, Double> columnDesiredPrice;
@@ -58,6 +38,13 @@ public class MainController {
     @FXML
     private TableColumn<CryptoTable, Text> columnName;
 
+    @FXML
+    private TableColumn<CryptoTable, Double> columnCurrentPrice;
+
+    @FXML
+    private TableColumn<CryptoTable, Double> columnCurrentCourse;
+
+
     static int tableId;
     static int tableIdKurs;
 
@@ -68,12 +55,6 @@ public class MainController {
 
     @FXML
     public TableView<CryptoTable> tableViewKurs;
-
-
-    private static String id;
-    Connection conn = null;
-    ResultSet rs = null;
-    PreparedStatement pst = null;
 
     @FXML
     void ShowNews(ActionEvent event) {
@@ -110,13 +91,6 @@ public class MainController {
     }
 
     public void initialize() throws SQLException, ClassNotFoundException {
-        tableViewKurs.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                tableId = tableViewKurs.getSelectionModel().getSelectedIndex();
-            }
-        });
-
         tableViewCrypto.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
@@ -133,6 +107,8 @@ public class MainController {
             columnQuantity.setCellValueFactory(new PropertyValueFactory<CryptoTable, Double>("quantity"));
             columnSumOfBuy.setCellValueFactory(new PropertyValueFactory<CryptoTable, Double>("sum_of_buy"));
             columnDesiredPrice.setCellValueFactory(new PropertyValueFactory<CryptoTable, Double>("desired_price"));
+//            columnCurrentPrice.setCellValueFactory(new PropertyValueFactory<CryptoTable, Double>("current_price"));
+//            columnCurrentCourse.setCellValueFactory(new PropertyValueFactory<CryptoTable, Double>("current_course"));
         }
         catch (SQLException e) {
             e.printStackTrace();
