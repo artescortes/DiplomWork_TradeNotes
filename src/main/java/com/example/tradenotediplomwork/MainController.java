@@ -1,5 +1,7 @@
 package com.example.tradenotediplomwork;
 
+import com.example.tradenotediplomwork.modalWin.ModalWinAboutProg;
+import com.example.tradenotediplomwork.modalWin.ModalWindow;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -63,11 +65,8 @@ public class MainController {
 
     @FXML
     void AboutProgram(ActionEvent event) throws IOException {
-        String aboutCompany = new String();
-        aboutCompany = "ЧГУ им. И.Н. Ульянова.\n" +
-                "Студент 4 курса, Факультета прикладной математики, физики и информационных технологий \n" +
-                "Козловский Артём Сергеевич";
-        mainTextArea.setText(aboutCompany);
+        Button btn = new Button("new window");
+        btn.setOnAction(ModalWinAboutProg.modalWindowAboutProgram(""));
     }
 
     @FXML

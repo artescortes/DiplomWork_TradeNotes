@@ -61,7 +61,6 @@ public class SignUpController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-        //stage.initStyle(StageStyle.DECORATED);
     }
 
     public void switchToLogIn(ActionEvent event) throws IOException {
