@@ -11,9 +11,9 @@
    <children>
       <BorderPane prefHeight="387.0" prefWidth="549.0" style="-fx-background-color: #00AF64;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <HBox prefHeight="55.0" prefWidth="900.0" style="-fx-background-color: #FFC373;">
+            <HBox prefHeight="55.0" prefWidth="900.0" style="-fx-background-color: #0B61A4;">
                <children>
-                  <MenuButton alignment="CENTER" mnemonicParsing="false" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #FFC373;" text="Кошелек" textFill="#61d7a4">
+                  <MenuButton alignment="CENTER" mnemonicParsing="false" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #0B61A4;" text="Кошелек" textFill="#61d7a4">
                      <items>
                         <MenuItem mnemonicParsing="false" text="Кошелек" />
                         <MenuItem mnemonicParsing="false" text="Акции" />
@@ -23,12 +23,12 @@
                         <Font size="19.0" />
                      </font>
                   </MenuButton>
-                  <Button fx:id="mainNewsBtn" mnemonicParsing="false" onAction="#ShowNews" prefHeight="60.0" prefWidth="196.0" style="-fx-background-color: #ffffff; -fx-border-color: #FFC373; -fx-border-width: 3;" text="Новости" textFill="#61d7a4">
+                  <Button fx:id="mainNewsBtn" mnemonicParsing="false" onAction="#ShowNews" prefHeight="60.0" prefWidth="196.0" style="-fx-background-color: #ffffff; -fx-border-color: #0B61A4; -fx-border-width: 3;" text="Новости" textFill="#61d7a4">
                      <font>
                         <Font size="25.0" />
                      </font>
                   </Button>
-                  <Button mnemonicParsing="false" onAction="#AboutProgram" prefHeight="46.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #FFC373; -fx-border-width: 3;" text="О программе" textAlignment="CENTER" textFill="#61d7a4">
+                  <Button mnemonicParsing="false" onAction="#AboutProgram" prefHeight="46.0" prefWidth="200.0" style="-fx-background-color: #ffffff; -fx-border-color: #0B61A4; -fx-border-width: 3;" text="О программе" textAlignment="CENTER" textFill="#61d7a4">
                      <font>
                         <Font size="25.0" />
                      </font>
@@ -38,7 +38,7 @@
                         <Insets left="90.0" />
                      </HBox.margin>
                      <children>
-                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="60.0" prefWidth="330.0" style="-fx-background-color: #ffff; -fx-border-color: #FFC373; -fx-border-width: 3;" text="Профиль" textAlignment="CENTER" textFill="#61d7a4">
+                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="60.0" prefWidth="330.0" style="-fx-background-color: #ffff; -fx-border-color: #0B61A4; -fx-border-width: 3;" text="Профиль" textAlignment="CENTER" textFill="#61d7a4">
                            <font>
                               <Font size="25.0" />
                            </font>
@@ -52,14 +52,14 @@
             </HBox>
          </top>
          <left>
-            <VBox prefHeight="513.0" prefWidth="198.0" style="-fx-background-color: #ffff;" BorderPane.alignment="CENTER">
+            <VBox prefHeight="513.0" prefWidth="198.0" style="-fx-background-color: #0B61A4;" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="addToken" mnemonicParsing="false" onAction="#toInsertTokenWin" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #FFC373;" text="Добавить токен" textFill="#61d7a4">
+                  <Button fx:id="addToken" mnemonicParsing="false" onAction="#toInsertTokenWin" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #0B61A4;" text="Добавить токен" textFill="#61d7a4">
                      <font>
                         <Font size="19.0" />
                      </font>
                   </Button>
-                  <Button fx:id="needHelp" mnemonicParsing="false" onAction="#needHelp" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #FFC373;" text="Нужна помощь" textFill="#61d7a4" translateY="284.0" VBox.vgrow="ALWAYS">
+                  <Button fx:id="needHelp" mnemonicParsing="false" onAction="#needHelp" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #0B61A4;" text="Нужна помощь" textFill="#61d7a4" translateY="284.0" VBox.vgrow="ALWAYS">
                      <font>
                         <Font size="19.0" />
                      </font>
@@ -73,20 +73,21 @@
          <center>
             <TableView fx:id="tableViewCrypto" prefHeight="395.0" prefWidth="441.0" style="-fx-background-color: #ffff;" BorderPane.alignment="CENTER">
               <columns>
-                  <TableColumn fx:id="columnId" prefWidth="75.0" text="id" />
-                <TableColumn fx:id="columnName" prefWidth="75.0" text="Название " />
-                <TableColumn fx:id="columnQuantity" prefWidth="75.0" text="Количество" />
-                  <TableColumn fx:id="columnSumOfBuy" prefWidth="109.0" text="Сумма покупки" />
-                  <TableColumn fx:id="columnDesiredPrice" prefWidth="106.0" text="Желаемая цена" />
+                  <TableColumn fx:id="columnId" prefWidth="45.0" text="id" />
+                <TableColumn fx:id="columnName" prefWidth="79.0" text="Название " />
+                <TableColumn fx:id="columnQuantity" prefWidth="83.0" text="Количество" />
+                  <TableColumn fx:id="columnSumOfBuy" prefWidth="111.0" text="Сумма покупки" />
+                  <TableColumn fx:id="columnDesiredPrice" prefWidth="122.0" text="Желаемая цена" />
               </columns>
             </TableView>
          </center>
          <right>
             <TableView fx:id="tableViewKurs" prefHeight="514.0" prefWidth="261.0" BorderPane.alignment="CENTER">
               <columns>
-                  <TableColumn prefWidth="38.0" text="id" />
-                <TableColumn prefWidth="113.0" text="Нынешняя сумма" />
-                <TableColumn prefWidth="109.0" text="Курс за единицу" />
+                  <TableColumn fx:id="columnCourseId" prefWidth="38.0" text="id" />
+                  <TableColumn fx:id="columnCourseName" prefWidth="75.0" text="Название" />
+                <TableColumn fx:id="columnCurrentPrice" prefWidth="71.0" text="Сумма нв" />
+                <TableColumn fx:id="columnCurrentCourse" prefWidth="76.0" text="Курс" />
               </columns>
             </TableView>
          </right>

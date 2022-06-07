@@ -65,7 +65,5 @@ public class InsertTokenController {
         } catch (Exception e3) {
             System.out.println("Error!");
         }
-
     }
-
 }

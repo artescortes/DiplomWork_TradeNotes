@@ -41,10 +41,16 @@ public class MainController {
     private TableColumn<CryptoTable, Text> columnName;
 
     @FXML
-    private TableColumn<CryptoTable, Double> columnCurrentPrice;
+    private TableColumn<CourseTable, Double> columnCurrentPrice;
 
     @FXML
-    private TableColumn<CryptoTable, Double> columnCurrentCourse;
+    private TableColumn<CourseTable, Double> columnCurrentCourse;
+
+    @FXML
+    private TableColumn<CourseTable, Text> columnCourseName;
+
+    @FXML
+    private TableColumn<CourseTable, Integer> columnCourseId;
 
 
     static int tableId;
@@ -52,11 +58,12 @@ public class MainController {
 
     private static ObservableList<CryptoTable> CryptoTable = FXCollections.observableArrayList();
 
+    private static ObservableList<CourseTable> CourseTable = FXCollections.observableArrayList();
     @FXML
     public TableView<CryptoTable> tableViewCrypto;
 
     @FXML
-    public TableView<CryptoTable> tableViewKurs;
+    public TableView<CourseTable> tableViewKurs;
 
     @FXML
     void ShowNews(ActionEvent event) {
@@ -106,12 +113,21 @@ public class MainController {
             columnQuantity.setCellValueFactory(new PropertyValueFactory<CryptoTable, Double>("quantity"));
             columnSumOfBuy.setCellValueFactory(new PropertyValueFactory<CryptoTable, Double>("sum_of_buy"));
             columnDesiredPrice.setCellValueFactory(new PropertyValueFactory<CryptoTable, Double>("desired_price"));
-//            columnCurrentPrice.setCellValueFactory(new PropertyValueFactory<CryptoTable, Double>("current_price"));
-//            columnCurrentCourse.setCellValueFactory(new PropertyValueFactory<CryptoTable, Double>("current_course"));
         }
         catch (SQLException e) {
             e.printStackTrace();
         }
+        try {
+            if (connection == null) return;
+            ConnToBD connector = new ConnToBD();
+            connection = connector.getConnection();
+            tableViewKurs.setItems(connector.getCourseTable("SELECT * FROM course"));
+            columnCourseId.setCellValueFactory(new PropertyValueFactory<CourseTable, Integer>("course_id"));
+            columnCourseName.setCellValueFactory(new PropertyValueFactory<CourseTable, Text>("course_name"));
+            columnCurrentPrice.setCellValueFactory(new PropertyValueFactory<CourseTable, Double>("current_price"));
+            columnCurrentCourse.setCellValueFactory(new PropertyValueFactory<CourseTable, Double>("current_course"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-
 }

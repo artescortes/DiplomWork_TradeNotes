@@ -17,7 +17,6 @@ public class CryptoTable {
         this.quantity = quantity;
         this.sum_of_buy = sum_of_buy;
         this.desired_price = desired_price;
-        //this.tableViewCrypto = tableViewCrypto;
     }
 
 
@@ -61,4 +60,7 @@ public class CryptoTable {
         this.desired_price = desired_price;
     }
 }
+
+
+
 

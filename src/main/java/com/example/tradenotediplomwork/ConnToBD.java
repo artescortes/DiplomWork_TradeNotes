@@ -36,7 +36,8 @@ public class ConnToBD extends Main {
                 "desired_price DOUBLE NOT NULL)";
         statmt.executeUpdate(sql1);
         sql1 =  "CREATE TABLE IF NOT EXISTS  course " +
-                "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "(course_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "course_name TEXT  NOT NULL," +
                 "current_price DOUBLE NOT NULL," +
                 "current_course DOUBLE NOT NULL)";
         statmt.executeUpdate(sql1);
@@ -63,23 +64,20 @@ public class ConnToBD extends Main {
     public Connection getConnection() {
         return connection;
     }
-}
 
-        //запрос создания таблицы пользователей
-//        CREATE TABLE IF NOT EXISTS  users (
-//                id INTEGER NOT NULL,
-//                name TEXT  NOT NULL,
-//                surname TEXT NOT NULL,
-//                phone_number INTEGER NOT NULL,
-//                e_mail NVARCHAR NOT NULL,
-//                PRIMARY KEY(id)
-//);
-//Запрос создания таблицы крипты
-//        CREATE TABLE IF NOT EXISTS  crypto (
-//                id INTEGER NOT NULL,
-//                name TEXT  NOT NULL,
-//                quantity DOUBLE NOT NULL,
-//                sum_of_buy DOUBLE NOT NULL,
-//                desired_price DOUBLE NOT NULL,
-//                PRIMARY KEY(id)
-//);
+    public ObservableList<CourseTable> getCourseTable(String selectRequest) throws SQLException {
+        ObservableList<CourseTable> res = FXCollections.observableArrayList();
+        ResultSet set = statmt.executeQuery(selectRequest);
+        String course_name;
+        Double current_price, current_course;
+        int course_id;
+        while (set.next()) {
+            course_id = set.getInt("course_id");
+            course_name = set.getString("course_name");
+            current_price = set.getDouble("current_price");
+            current_course = set.getDouble("current_course");
+            res.add(new CourseTable(course_id, course_name, current_price, current_course));
+        }
+        return res;
+    }
+}

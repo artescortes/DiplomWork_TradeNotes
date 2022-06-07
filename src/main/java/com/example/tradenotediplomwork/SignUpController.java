@@ -51,7 +51,6 @@ public class SignUpController {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-        //((Node)(event.getSource())).getScene().getWindow().hide();
     }
 
 
