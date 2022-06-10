@@ -12,17 +12,17 @@
       <TextArea fx:id="chatTextArea" layoutX="198.0" prefHeight="349.0" prefWidth="402.0" />
       <VBox prefHeight="422.0" prefWidth="198.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#toMainFromChat" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-color: #FFC373; -fx-border-width: 3;" text="На главное окно" textFill="#61d7a4">
+            <Button mnemonicParsing="false" onAction="#toMainFromChat" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-color: #0B61A4; -fx-border-width: 3;" text="На главное окно" textFill="#61d7a4">
                <font>
                   <Font size="19.0" />
                </font>
             </Button>
-            <Button fx:id="registrationBtn" mnemonicParsing="false" onAction="#RegistrationHelp" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #FFC373;" text="Регистрация" textFill="#61d7a4">
+            <Button fx:id="registrationBtn" mnemonicParsing="false" onAction="#RegistrationHelp" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #0B61A4;" text="Регистрация" textFill="#61d7a4">
                <font>
                   <Font size="19.0" />
                </font>
             </Button>
-            <Button fx:id="contactChatBtn" mnemonicParsing="false" onAction="#ShowContacts" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #FFC373;" text="Контакты" textFill="#61d7a4">
+            <Button fx:id="contactChatBtn" mnemonicParsing="false" onAction="#ShowContacts" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #0B61A4;" text="Контакты" textFill="#61d7a4">
                <font>
                   <Font size="19.0" />
                </font>

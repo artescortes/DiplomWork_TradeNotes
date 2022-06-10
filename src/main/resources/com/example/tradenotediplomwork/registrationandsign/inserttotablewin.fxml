@@ -38,12 +38,12 @@
             <Font size="19.0" />
          </font>
       </Label>
-      <Button fx:id="insertTokenBtn" layoutX="344.0" layoutY="297.0" mnemonicParsing="false" onAction="#insertTokenToTable" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #FFC373;" text="Добавить токен" textFill="#61d7a4">
+      <Button fx:id="insertTokenBtn" layoutX="344.0" layoutY="297.0" mnemonicParsing="false" onAction="#insertTokenToTable" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #0B61A4;" text="Добавить токен" textFill="#61d7a4">
          <font>
             <Font size="19.0" />
          </font>
       </Button>
-      <Button layoutX="66.0" layoutY="297.0" mnemonicParsing="false" onAction="#toMainFromInsert" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #FFC373;" text="На главную" textFill="#61d7a4">
+      <Button layoutX="66.0" layoutY="297.0" mnemonicParsing="false" onAction="#toMainFromInsert" prefHeight="72.0" prefWidth="198.0" style="-fx-background-color: #ffffff; -fx-border-width: 3; -fx-border-color: #0B61A4;" text="На главную" textFill="#61d7a4">
          <font>
             <Font size="19.0" />
          </font>

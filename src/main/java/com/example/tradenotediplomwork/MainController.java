@@ -41,16 +41,16 @@ public class MainController {
     private TableColumn<CryptoTable, Text> columnName;
 
     @FXML
-    private TableColumn<CourseTable, Double> columnCurrentPrice;
+    private TableColumn<CryptoTable, Double> columnCurrentPrice;
 
     @FXML
-    private TableColumn<CourseTable, Double> columnCurrentCourse;
+    private TableColumn<CryptoTable, Double> columnCurrentCourse;
 
-    @FXML
-    private TableColumn<CourseTable, Text> columnCourseName;
-
-    @FXML
-    private TableColumn<CourseTable, Integer> columnCourseId;
+//    @FXML
+//    private TableColumn<CourseTable, Text> columnCourseName;
+//
+//    @FXML
+//    private TableColumn<CourseTable, Integer> columnCourseId;
 
 
     static int tableId;
@@ -113,21 +113,23 @@ public class MainController {
             columnQuantity.setCellValueFactory(new PropertyValueFactory<CryptoTable, Double>("quantity"));
             columnSumOfBuy.setCellValueFactory(new PropertyValueFactory<CryptoTable, Double>("sum_of_buy"));
             columnDesiredPrice.setCellValueFactory(new PropertyValueFactory<CryptoTable, Double>("desired_price"));
+            columnCurrentPrice.setCellValueFactory(new PropertyValueFactory<CryptoTable, Double>("current_price"));
+            columnCurrentCourse.setCellValueFactory(new PropertyValueFactory<CryptoTable, Double>("current_course"));
         }
         catch (SQLException e) {
             e.printStackTrace();
         }
-        try {
-            if (connection == null) return;
-            ConnToBD connector = new ConnToBD();
-            connection = connector.getConnection();
-            tableViewKurs.setItems(connector.getCourseTable("SELECT * FROM course"));
-            columnCourseId.setCellValueFactory(new PropertyValueFactory<CourseTable, Integer>("course_id"));
-            columnCourseName.setCellValueFactory(new PropertyValueFactory<CourseTable, Text>("course_name"));
-            columnCurrentPrice.setCellValueFactory(new PropertyValueFactory<CourseTable, Double>("current_price"));
-            columnCurrentCourse.setCellValueFactory(new PropertyValueFactory<CourseTable, Double>("current_course"));
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        try {
+//            if (connection == null) return;
+//            ConnToBD connector = new ConnToBD();
+//            connection = connector.getConnection();
+//            tableViewKurs.setItems(connector.getCourseTable("SELECT * FROM course"));
+//            columnCourseId.setCellValueFactory(new PropertyValueFactory<CourseTable, Integer>("course_id"));
+//            columnCourseName.setCellValueFactory(new PropertyValueFactory<CourseTable, Text>("course_name"));
+//            columnCurrentPrice.setCellValueFactory(new PropertyValueFactory<CourseTable, Double>("current_price"));
+//            columnCurrentCourse.setCellValueFactory(new PropertyValueFactory<CourseTable, Double>("current_course"));
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 }

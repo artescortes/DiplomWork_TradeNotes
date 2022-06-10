@@ -78,19 +78,11 @@
                 <TableColumn fx:id="columnQuantity" prefWidth="83.0" text="Количество" />
                   <TableColumn fx:id="columnSumOfBuy" prefWidth="111.0" text="Сумма покупки" />
                   <TableColumn fx:id="columnDesiredPrice" prefWidth="122.0" text="Желаемая цена" />
+                  <TableColumn fx:id="columnCurrentPrice" prefWidth="107.0" text="Текущая сумма" />
+                  <TableColumn fx:id="columnCurrentCourse" prefWidth="103.0" text="Текущий курс" />
               </columns>
             </TableView>
          </center>
-         <right>
-            <TableView fx:id="tableViewKurs" prefHeight="514.0" prefWidth="261.0" BorderPane.alignment="CENTER">
-              <columns>
-                  <TableColumn fx:id="columnCourseId" prefWidth="38.0" text="id" />
-                  <TableColumn fx:id="columnCourseName" prefWidth="75.0" text="Название" />
-                <TableColumn fx:id="columnCurrentPrice" prefWidth="71.0" text="Сумма нв" />
-                <TableColumn fx:id="columnCurrentCourse" prefWidth="76.0" text="Курс" />
-              </columns>
-            </TableView>
-         </right>
       </BorderPane>
    </children>
 </AnchorPane>
